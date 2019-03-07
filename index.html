@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-sm-8 text-center" id="barner">
+          Amortize Schedule of loan Payment
+        </div>
+        <div
+          class="col-10 align-items-center justify-content-center"
+          id="content"
+        >
+          <form onsubmit="return submit(event)">
+            <div class="form-group row">
+              <div class="col-sm-6">
+                <label for="loanAmount" class="col-form-label"
+                  >Loan Amount</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="loanAmount"
+                  placeholder="50000"
+                  min="1"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-6">
+                <label for="loanPeriod" class="col-form-label"
+                  >Loan Period (Months)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="loanPeriod"
+                  placeholder="5"
+                  min="1"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-6">
+                <label for="intrestRate" class="col-form-label"
+                  >Intrest Rate (%)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="intrestRate"
+                  placeholder="5"
+                  min="1"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary">
+                  Get Amortized Schedule
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="col-12">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Payment No</th>
+                  <th scope="col">Payment Amount</th>
+                  <th scope="col">Principal Amount Paid</th>
+                  <th scope="col">Interest Amount Paid</th>
+                  <th scope="col">Loan Outstanding Balance</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/calculationLogic.js"></script>
+  <script src="js/displayResult.js"></script>
+</html>
